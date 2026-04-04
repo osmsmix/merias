@@ -1,2 +1,0 @@
-const url = 'https://zrtzromivystotfegvot.supabase.co';
-const anonKey = 'sb_publishable_jxNd-mIv10h-oGlCA8WcTw_eG_wBEdD';

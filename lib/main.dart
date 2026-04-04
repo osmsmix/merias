@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
-import 'package:testmerias/keys.dart';
 import 'package:testmerias/pages/game_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -10,9 +10,10 @@ import 'providers/player3_provider.dart';
 import 'providers/user_provider.dart';
 
 Future<void> main() async{
+  await dotenv.load(fileName: '.env');
   await Supabase.initialize(
-    url: url,
-    anonKey: anonKey,
+    url: dotenv.env['url']!,
+    anonKey: dotenv.env['anonKey']!,
   );
   runApp(const MyApp());
 }
